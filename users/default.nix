@@ -21,7 +21,7 @@
   juliuskoskela-unikie = utils.mkUser {
     inherit stateVersion;
 
-    username = "juliukoskela-unikie";
+    username = "juliuskoskela-unikie";
     description = "Julius Koskela's user for Unikie";
     extraGroups = ["networkmanager" "wheel" "dialout" "davfs2" "storage"];
 
