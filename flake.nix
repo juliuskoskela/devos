@@ -43,8 +43,8 @@
             users = import ./users {inherit inputs utils pkgs colors stateVersion;};
             modules = [
               ./hosts/vega
-              users."juliuskoskela"
-              users."juliuskoskela-unikie"
+              users.juliuskoskela
+              users.juliuskoskela-unikie
             ];
           in
             utils.mkSystem {inherit pkgs inputs system stateVersion sopsFile modules;};
@@ -59,8 +59,8 @@
             users = import ./users {inherit inputs utils pkgs colors stateVersion;};
             modules = [
               ./hosts/nova
-              users."juliuskoskela"
-              users."juliuskoskela-unikie"
+              users.juliuskoskela
+              users.juliuskoskela-unikie
             ];
           in
             utils.mkSystem {inherit pkgs inputs system stateVersion sopsFile modules;};
