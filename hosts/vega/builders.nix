@@ -5,7 +5,7 @@
     path = "/root/.ssh/awsarm";
   };
 
-  sops.secrets."builders/awsarm/ssh_key.pub" = {
+  sops.secrets."builders/awsarm/ssh_pubkey" = {
     owner = "root";
     path = "/root/.ssh/awsarm.pub";
   };

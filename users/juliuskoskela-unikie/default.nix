@@ -20,16 +20,16 @@ in {
   ];
 
   sops = {
-    age.keyFile = "/home/juliuskoskela/.config/sops/age/keys.txt";
+    age.keyFile = "/home/juliuskoskela-unikie/.config/sops/age/keys.txt";
     defaultSopsFile = ../../secrets/secrets.yaml;
   };
 
-  sops.secrets."users/juliuskoskela/ssh_key" = {
-    path = "/home/juliuskoskela/.ssh/id_rsa";
+  sops.secrets."users/juliuskoskela-unikie/ssh_key" = {
+    path = "/home/juliuskoskela-unikie/.ssh/id_rsa";
   };
 
-  sops.secrets."users/juliuskoskela/ssh_key.pub" = {
-    path = "/home/juliuskoskela/.ssh/id_rsa.pub";
+  sops.secrets."users/juliuskoskela-unikie/ssh_pubkey" = {
+    path = "/home/juliuskoskela-unikie/.ssh/id_rsa.pub";
   };
 
   fonts.fontconfig.enable = true;

@@ -17,7 +17,7 @@
   }: let
     passwordPath = "/var/lib/${username}/password";
   in {
-    sops.secrets."user/${username}/password" = {
+    sops.secrets."users/${username}/password" = {
       neededForUsers = true;
       path = passwordPath;
     };

@@ -28,7 +28,7 @@ in {
     path = "/home/juliuskoskela/.ssh/id_rsa";
   };
 
-  sops.secrets."users/juliuskoskela/ssh_key.pub" = {
+  sops.secrets."users/juliuskoskela/ssh_pubkey" = {
     path = "/home/juliuskoskela/.ssh/id_rsa.pub";
   };
 
