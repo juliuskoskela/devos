@@ -39,8 +39,7 @@
             config.allowUnfree = true;
           };
           colors = nix-colors.colorSchemes.dracula;
-          programs = import ./programs {inherit pkgs colors;};
-          users = import ./users {inherit inputs utils pkgs programs stateVersion;};
+          users = import ./users {inherit inputs utils pkgs colors stateVersion;};
           modules = [
             ./hosts/vega
             users."juliuskoskela"
@@ -56,8 +55,7 @@
             config.allowUnfree = true;
           };
           colors = nix-colors.colorSchemes.dracula;
-          programs = import ./programs {inherit pkgs colors;};
-          users = import ./users {inherit inputs utils pkgs programs stateVersion;};
+          users = import ./users {inherit inputs utils pkgs colors stateVersion;};
           modules = [
             ./hosts/nova
             users."juliuskoskela"

@@ -7,14 +7,14 @@
 }: let
   name = "vega";
 in {
-  sops.secrets."hosts/vega/ssh_key" = {
-    owner = "root";
-    path = "/root/.ssh/id_ed25519";
-  };
-  sops.secrets."hosts/vega/ssh_pubkey" = {
-    owner = "root";
-    path = "/root/.ssh/id_ed25519.pub";
-  };
+  # sops.secrets."hosts/vega/ssh_key" = {
+  #   owner = "root";
+  #   path = "/root/.ssh/id_ed25519";
+  # };
+  # sops.secrets."hosts/vega/ssh_pubkey" = {
+  #   owner = "root";
+  #   path = "/root/.ssh/id_ed25519.pub";
+  # };
 
   services.udev.packages = [pkgs.yubikey-personalization];
   services.pcscd.enable = true;

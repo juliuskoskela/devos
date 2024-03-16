@@ -15,17 +15,17 @@
     imports ? [],
     packages ? [],
   }: let
-    passwordPath = "/var/lib/${username}/password";
+    # passwordPath = "/var/lib/${username}/password";
   in {
-    sops.secrets."users/${username}/password" = {
-      neededForUsers = true;
-      path = passwordPath;
-    };
+    # sops.secrets."users/${username}/password" = {
+    #   neededForUsers = true;
+    #   path = passwordPath;
+    # };
 
     users.users.${username} = {
       inherit description extraGroups;
       isNormalUser = true;
-      hashedPasswordFile = passwordPath;
+      # hashedPasswordFile = passwordPath;
     };
 
     home-manager.users.${username} =

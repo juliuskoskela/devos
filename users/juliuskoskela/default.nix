@@ -3,6 +3,7 @@
   inputs,
   utils,
   pkgs,
+  colors,
   ...
 }: let
   gitUser = utils.mkGitUser {
@@ -10,6 +11,8 @@
     email = "julius.koskela@nordic-dev.net";
     gpgKey = "5A7B7F4897C2914B";
   };
+
+  dotfiles = import ../../programs {inherit pkgs colors;};
 in {
   imports = with inputs; [
     nixvim.homeManagerModules.nixvim
@@ -17,20 +20,12 @@ in {
     plasma-manager.homeManagerModules.plasma-manager
     sops-nix.homeManagerModules.sops
     gitUser
+    dotfiles.alacritty
+    dotfiles.hyprland
+    dotfiles.nixvim
+    dotfiles.plasma
+    dotfiles.waybar
   ];
-
-  sops = {
-    age.keyFile = "/home/juliuskoskela/.config/sops/age/keys.txt";
-    defaultSopsFile = ../../secrets/secrets.yaml;
-  };
-
-  sops.secrets."users/juliuskoskela/ssh_key" = {
-    path = "/home/juliuskoskela/.ssh/id_rsa";
-  };
-
-  sops.secrets."users/juliuskoskela/ssh_pubkey" = {
-    path = "/home/juliuskoskela/.ssh/id_rsa.pub";
-  };
 
   fonts.fontconfig.enable = true;
 

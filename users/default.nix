@@ -3,7 +3,7 @@
   inputs,
   utils,
   pkgs,
-  programs,
+  colors,
   stateVersion,
   ...
 }: let
@@ -14,16 +14,8 @@
     description = "Julius Koskela's personal user";
     extraGroups = ["networkmanager" "wheel" "dialout" "davfs2" "storage"];
 
-    homeConfig = import ./juliuskoskela {inherit inputs utils pkgs;};
+    homeConfig = import ./juliuskoskela {inherit inputs utils pkgs colors;};
     packages = import ./juliuskoskela/packages.nix {inherit pkgs;};
-
-    imports = [
-      programs.alacritty
-      programs.hyprland
-      programs.nixvim
-      programs.plasma
-      programs.waybar
-    ];
   };
 
   juliuskoskela-unikie = utils.mkUser {
@@ -33,16 +25,8 @@
     description = "Julius Koskela's user for Unikie";
     extraGroups = ["networkmanager" "wheel" "dialout" "davfs2" "storage"];
 
-    homeConfig = import ./juliuskoskela-unikie {inherit inputs utils pkgs;};
+    homeConfig = import ./juliuskoskela-unikie {inherit inputs utils pkgs colors;};
     packages = import ./juliuskoskela-unikie/packages.nix {inherit pkgs;};
-
-    imports = [
-      programs.alacritty
-      programs.hyprland
-      programs.nixvim
-      programs.plasma
-      programs.waybar
-    ];
   };
 in {
   inherit juliuskoskela juliuskoskela-unikie;

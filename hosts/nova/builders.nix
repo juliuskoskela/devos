@@ -1,14 +1,14 @@
 # hosts/vega/builders.nix
 {
-  sops.secrets."builders/awsarm/ssh_key" = {
-    owner = "root";
-    path = "/root/.ssh/awsarm";
-  };
+  # sops.secrets."builders/awsarm/ssh_key" = {
+  #   owner = "root";
+  #   path = "/root/.ssh/awsarm";
+  # };
 
-  sops.secrets."builders/awsarm/ssh_pubkey" = {
-    owner = "root";
-    path = "/root/.ssh/awsarm.pub";
-  };
+  # sops.secrets."builders/awsarm/ssh_pubkey" = {
+  #   owner = "root";
+  #   path = "/root/.ssh/awsarm.pub";
+  # };
 
   nix = {
     buildMachines = [
