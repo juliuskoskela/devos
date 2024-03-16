@@ -66,5 +66,5 @@
             utils.mkSystem {inherit pkgs inputs system stateVersion sopsFile modules;};
         };
       }
-      // (utils.setFormatter "alejandra" nixpkgs);
+      // utils.setFormatter alejandra;
 }

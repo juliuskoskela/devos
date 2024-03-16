@@ -115,7 +115,7 @@
 
   eachDefaultSystem = eachSystem defaultSystems;
 
-  setFormatter = name: nixpkgs:
+  setFormatter = name:
     eachDefaultSystem (system: let
       pkgs = nixpkgs.legacyPackages.${system};
     in {

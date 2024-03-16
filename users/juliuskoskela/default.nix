@@ -31,6 +31,7 @@ in {
     dotfiles.plasma
     dotfiles.waybar
     dotfiles.zsh
+    ./environment.nix
   ];
 
   fonts.fontconfig.enable = true;
@@ -40,6 +41,7 @@ in {
       enable = true;
       defaultCacheTtl = 1800;
       enableSshSupport = true;
+      pinentryPackage = pkgs.pinentry-qt;
     };
 
     nextcloud-client = {
@@ -47,4 +49,6 @@ in {
       startInBackground = true;
     };
   };
+
+  gtk.enable = true;
 }
