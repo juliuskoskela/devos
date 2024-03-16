@@ -1,31 +1,31 @@
 # programs/hyprland/default.nix
 {
-  inputs,
+  # hyprland,
+  hyprwm-contrib,
   pkgs,
-  sessionVariables,
-  colorScheme,
+  colors,
   ...
 }: {
-  imports = [
-    inputs.hyprland.homeManagerModules.default
-  ];
+  # imports = [
+  #   hyprland.homeManagerModules.default
+  # ];
 
   home.packages = with pkgs; [
-    inputs.hyprwm-contrib.packages.${system}.grimblast
+    hyprwm-contrib.packages.${system}.grimblast
     swaybg
     swayidle
     wofi
     mako
     swww
     # TODO Is this needed?
-    # inputs.hyprland.packages.${system}.xdg-desktop-portal-hyprland
+    # hyprland.packages.${system}.xdg-desktop-portal-hyprland
   ];
 
   wayland.windowManager.hyprland = {
     enable = true;
-    package = inputs.hyprland.packages.${pkgs.system}.default;
+    # package = hyprland.packages.${pkgs.system}.default;
     extraConfig = import ./config.nix {
-      inherit sessionVariables colorScheme;
+      inherit colors;
     };
   };
 }

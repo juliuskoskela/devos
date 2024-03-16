@@ -12,13 +12,14 @@
     gpgKey = "D5C22DF4D8242BBE";
   };
 
-  dotfiles = import ../../programs {inherit pkgs colors;};
+  dotfiles = import ../../programs {inherit (inputs) hyprland hyprwm-contrib; inherit pkgs colors;};
 in {
   imports = with inputs; [
     nixvim.homeManagerModules.nixvim
     nix-colors.homeManagerModules.default
     plasma-manager.homeManagerModules.plasma-manager
     sops-nix.homeManagerModules.sops
+    hyprland.homeManagerModules.default
     gitUser
     dotfiles.alacritty
     dotfiles.hyprland
