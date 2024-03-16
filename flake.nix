@@ -43,7 +43,7 @@
           modules = [
             ./hosts/vega
             users."juliuskoskela"
-            # users."juliuskoskela-unikie"
+            users."juliuskoskela-unikie"
           ];
         in
           utils.mkSystem {inherit pkgs inputs system stateVersion sopsFile modules;};
@@ -59,7 +59,7 @@
           modules = [
             ./hosts/nova
             users."juliuskoskela"
-            # users."juliuskoskela-unikie"
+            users."juliuskoskela-unikie"
           ];
         in
           utils.mkSystem {inherit pkgs inputs system stateVersion sopsFile modules;};
