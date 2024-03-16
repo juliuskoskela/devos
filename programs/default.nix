@@ -11,6 +11,7 @@
   nixvim = import ./nixvim {inherit pkgs;};
   waybar = import ./waybar {inherit pkgs colors;};
   plasma = import ./plasma {inherit pkgs colors;};
+  zsh = import ./zsh {inherit pkgs;};
 in {
-  inherit alacritty hyprland nixvim waybar plasma;
+  inherit alacritty hyprland nixvim waybar plasma zsh;
 }

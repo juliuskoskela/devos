@@ -29,6 +29,7 @@ in {
     dotfiles.nixvim
     dotfiles.plasma
     dotfiles.waybar
+    dotfiles.zsh
   ];
 
   fonts.fontconfig.enable = true;
