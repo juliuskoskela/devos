@@ -12,7 +12,8 @@
     gpgKey = "5A7B7F4897C2914B";
   };
 
-  dotfiles = import ../../programs {inherit pkgs colors;
+  dotfiles = import ../../programs {
+    inherit pkgs colors;
     # hyprland = inputs.hyprland;
     hyprwm-contrib = inputs.hyprwm-contrib;
   };

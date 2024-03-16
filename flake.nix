@@ -30,40 +30,41 @@
     stateVersion = "24.05";
     sopsFile = ./secrets/secrets.yaml;
   in
-    with inputs; {
-      nixosConfigurations = {
-        vega = let
-          system = "x86_64-linux";
-          pkgs = import nixpkgs {
-            inherit system;
-            config.allowUnfree = true;
-          };
-          colors = nix-colors.colorSchemes.dracula;
-          users = import ./users {inherit inputs utils pkgs colors stateVersion;};
-          modules = [
-            ./hosts/vega
-            users."juliuskoskela"
-            users."juliuskoskela-unikie"
-          ];
-        in
-          utils.mkSystem {inherit pkgs inputs system stateVersion sopsFile modules;};
+    with inputs;
+      {
+        nixosConfigurations = {
+          vega = let
+            system = "x86_64-linux";
+            pkgs = import nixpkgs {
+              inherit system;
+              config.allowUnfree = true;
+            };
+            colors = nix-colors.colorSchemes.dracula;
+            users = import ./users {inherit inputs utils pkgs colors stateVersion;};
+            modules = [
+              ./hosts/vega
+              users."juliuskoskela"
+              users."juliuskoskela-unikie"
+            ];
+          in
+            utils.mkSystem {inherit pkgs inputs system stateVersion sopsFile modules;};
 
-        nova = let
-          system = "x86_64-linux";
-          pkgs = import nixpkgs {
-            inherit system;
-            config.allowUnfree = true;
-          };
-          colors = nix-colors.colorSchemes.dracula;
-          users = import ./users {inherit inputs utils pkgs colors stateVersion;};
-          modules = [
-            ./hosts/nova
-            users."juliuskoskela"
-            users."juliuskoskela-unikie"
-          ];
-        in
-          utils.mkSystem {inherit pkgs inputs system stateVersion sopsFile modules;};
-      };
-    }
-    // (utils.setFormatter "alejandra" nixpkgs);
+          nova = let
+            system = "x86_64-linux";
+            pkgs = import nixpkgs {
+              inherit system;
+              config.allowUnfree = true;
+            };
+            colors = nix-colors.colorSchemes.dracula;
+            users = import ./users {inherit inputs utils pkgs colors stateVersion;};
+            modules = [
+              ./hosts/nova
+              users."juliuskoskela"
+              users."juliuskoskela-unikie"
+            ];
+          in
+            utils.mkSystem {inherit pkgs inputs system stateVersion sopsFile modules;};
+        };
+      }
+      // (utils.setFormatter "alejandra" nixpkgs);
 }
