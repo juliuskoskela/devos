@@ -39,7 +39,7 @@
               inherit system;
               config.allowUnfree = true;
             };
-            colors = nix-colors.colorSchemes.dracula;
+            colors = nix-colors.colorSchemes.tokyo-night-dark;
             users = import ./users {inherit inputs utils pkgs colors stateVersion;};
             modules = [
               ./hosts/vega
@@ -55,7 +55,7 @@
               inherit system;
               config.allowUnfree = true;
             };
-            colors = nix-colors.colorSchemes.dracula;
+            colors = nix-colors.colorSchemes.tokyo-night-dark;
             users = import ./users {inherit inputs utils pkgs colors stateVersion;};
             modules = [
               ./hosts/nova
