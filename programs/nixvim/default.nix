@@ -192,7 +192,7 @@
           };
 
           # !TODO Find a better Nix linter, this was broken!
-          rnix-lsp.enable = true;
+          nil_ls.enable = true;
 
           # Lua
           lua-ls.enable = true;
@@ -214,6 +214,8 @@
 
           # Bash
           bashls.enable = true;
+
+          nushell.enable = true;
         };
 
         keymaps = {
